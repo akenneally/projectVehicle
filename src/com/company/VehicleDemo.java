@@ -22,6 +22,7 @@ public class VehicleDemo {
 
         // Call the Automobile constructor with three parameters.
         Automobile car1 = new Automobile("Toyota", "Prius", 2017);
+        Automobile car2 = new Automobile("Suburu", "Ascent", 2020, 7, true);
 
         // Call the toString method from the Automobile class implicitly.
         System.out.println("Car 1: " + car1.toString());
@@ -77,6 +78,9 @@ public class VehicleDemo {
 
         System.out.println("Taxi 1: " + taxi1.toString());
         System.out.println();
+
+        System.out.println(car1.moreSeats(car2));
     }
 }
+
 

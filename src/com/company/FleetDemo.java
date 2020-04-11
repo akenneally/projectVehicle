@@ -2,13 +2,13 @@ package com.company;
 
 /**
  * FleetDemo.java
- *
+ * <p>
  * A class that illustrates concepts related to polymorphism.
- *
+ * <p>
  * Starter code from Computer Science 111, Boston University
- *
+ * <p>
  * Modified by Laura K. Gross, COMP 152, Bridgewater State University
- *
+ * <p>
  * Completed by: [student name], [student email]
  * date: [date of completion]
  */
@@ -17,6 +17,14 @@ public class FleetDemo {
     public static final int CURRENT_YEAR = 2020;
 
     public static void main(String[] args) {
+
+        /* Polymorphism means "many forms".
+         * An object that can pass more than one is-a test can be considered polymorphic.
+         * Example: A TractorTrailer object is-a Truck; A TractorTrailer is-a Vehicle.
+         * And, of course, a TractorTrailer is-a TractorTrailer.
+         * That is, a child class object can take any form of a class in its
+         * parent hierarchy and of course itself as well [medium.com].
+         */
 
         /* Polymorphism is useful when we have a collection of objects of
          * different but related types.
@@ -36,27 +44,39 @@ public class FleetDemo {
         fleet[3] = new Taxi("Toyota", "Highlander Hybrid", 2016,
                 8, true, "A12345");
 
+        /*
+         * When we call a method on an object,
+         * - the COMPILER will check whether the class for the DECLARED type of the object
+         *   defines the method
+         * - if the class for the DECLARED type of the object DOES define the method,
+         *   the JVM will call the method as is most appropriate for the ACTUAL type
+         *   of the object.
+         */
+
         for (int i = 0; i < fleet.length; i++) {
             // Implicitly call the toString method on the ith element of the fleet.
-            System.out.println(fleet[i]);
+            System.out.println(fleet[i].toString());
             /*
-             * We can do this because the declared type of each element is Vehicle, and
-             * Vehicle has a toString method.
+             * We can do this because the COMPILER checks for the DECLARED type
+             * of each element (Vehicle) confirms that Vehicle has a toString method.
              *
-             * At runtime, the Java *interpreter* selects the version of toString
-             * that is appropriate to the *actual type* of the object---
+             * At runtime, the Java INTERPRETER selects the version of toString
+             * that is appropriate to the ACTUAL type of the object---
              * either from the class of the declared type Vehicle
              * or from the class of the actual type in which toString is overridden.
-             * This is known as dynamic binding.
-             * This can be done by the JVM not by the compiler.
+             * This is known selection process is called dynamic binding.
+             * It can be done by the JVM, not by the compiler.
              */
 
             /*
-             * System.out.println(fleet[0]); will invoke the Automobile version toString().
-             * System.out.println(fleet[1]); will invoke the Vehicle version of the toString() method,
-             * which is inherited by Motorcycle.  (Motorcycle does not define its own toString() method.)
-             * System.out.println(fleet[2]); will invoke the TractorTrailer version of the toString() method.
-             * System.out.println(fleet[3]); will invoke the Taxi version of the toString() method.
+             * System.out.println(fleet[0]); # invokes the toString method in Automobile, which overrides
+             * the toString method in Vehicle.
+             * System.out.println(fleet[1]); # invokes the toString method in Vehicle,
+             * which is inherited by Motorcycle.  (Motorcycle does not define its own toString method.)
+             * System.out.println(fleet[2]); # invokes the toString method in TractorTrailer, which overrides
+             * the toString method in Truck, which overrides the toString method in Vehicle.
+             * System.out.println(fleet[3]); # invokes the toString method in Taxi, which overrides
+             * the toString method in Automobile, which overrides the toString method in Vehicle.
              */
         }
 
@@ -69,18 +89,12 @@ public class FleetDemo {
          */
         // System.out.println(fleet[2].getNumAxles());
 
-        /* The declared type of fleet[2] is Vehicle.
-         * there's no getNumAxles() method defined in or inherited by Vehicle.
-         */
-
         /*
-         * We can use casting to create a reference with the necessary declared type:
+         * We can use CASTING to create a reference with the necessary DECLARED type.
+         * THE ACTUAL TYPE REMAINS TractorTrailer.
          */
         Truck truck1 = (Truck) fleet[2];
         /*
-         * The declared type of truck1 is Truck.
-         * There is a getNumAxles() method defined in Truck.
-         * So now we don't get an error.
          *
          * Which version of getNumAxles() will be invoked?
          */
@@ -89,28 +103,28 @@ public class FleetDemo {
         System.out.println();
 
         // Will this work?
-        // TractorTrailer big = (TractorTrailer) fleet[2];
-        // System.out.println(big.getNumAxles());
+        TractorTrailer big = (TractorTrailer) fleet[2];
+        System.out.println(big.getNumAxles());
 
         /*
-         * The Object class is a superclass of every other class.
+         * The Object class is a superclass of all other classes.
          * Thus, we can use an Object variable to store a reference to any object.
          */
         Object obj1 = new Taxi("Ford", "Tempo", 2000, 4, false, "T47783");
         // Which toString method will be called?
-        // System.out.println(obj1);
+        System.out.println(obj1.toString());
 
         // Which methods are executed when the following code is executed?
-
         Truck t1 = new Truck("Mack", "Pinnacle Day Cab", 2016, 10);
         Truck t2 = new TractorTrailer("Mack", "Pinnacle Day Cab", 2016, 10);
-        // System.out.println(t1.getNumAxles());
-        // System.out.println(t2.getNumAxles());
+        System.out.println(t1.getNumAxles());
+        System.out.println(t2.getNumAxles());
     }
 
     /*
      * A method to determine the average age of the vehicles in the fleet
      */
+
     public static void averageAge(Vehicle[] vehicleArray) {
         int totalAge = 0;
         for (int i = 0; i < vehicleArray.length; i++) {
@@ -122,10 +136,10 @@ public class FleetDemo {
              * that is appropriate to the *actual type* of the object.
              * This is known as dynamic binding.
              * This can be done by the JVM not by the compiler.
+             * As such, what methods are called in averageAge?
              */
         }
         System.out.println("Average fleet age: " + (double) totalAge / vehicleArray.length);
     }
 
 }
-

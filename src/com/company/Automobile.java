@@ -90,8 +90,18 @@ public class Automobile extends Vehicle {
     // What do you notice about method calls and instance variables in this
     // toString method?
 
+    /*
+     * Fields defined in Automobile can be accessed directly by methods defined in Automobile. 
+     * Fields inherited from Vehicle cannot be accessed directly by methods defined in Automobile.
+     */
+
     /* Note: Don't try to illegally access inherited private fields.
      * For example, the toString method cannot include
      * make + " " + model
+     *
      */
+
+    public boolean moreSeats(Automobile other){
+        return numSeats > other.numSeats;
+    }
 }

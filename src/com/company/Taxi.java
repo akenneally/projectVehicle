@@ -98,5 +98,10 @@ public class Taxi extends Automobile {
         return "Taxi (id = " + taxiID + ")";
     }
 
+    @Override
+    public int getNumSeats(){
+        return super.getNumSeats() - 1;
+    }
+
 }
 

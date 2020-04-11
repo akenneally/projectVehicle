@@ -97,4 +97,20 @@ package com.company;
     public String toString() {
         return make + " " + model;
     }
+
+    /* Note: We could do aggregation within this project.
+     * Namely, could give the "owner" object a field that refers to the "owned" object.
+     * We could make a Driver.java file in projectVehicle that defines the Driver class
+     * with the header and instance variables:
+     *
+     * public class Driver {
+     *
+     *      String name;
+     *      String ID;
+     *      Vehicle v;
+     *
+     * // ...
+     * }
+     *
+     */
 }
