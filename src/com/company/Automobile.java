@@ -24,6 +24,7 @@ public class Automobile extends Vehicle {
 
     private int numSeats;
     private boolean isSUV;
+    private boolean isMinivan;
 
     /**
      * A constructor with five parameters
@@ -43,10 +44,11 @@ public class Automobile extends Vehicle {
      * If there isn't such a constructor, we get a compile-time error.
      */
     public Automobile(String make, String model, int year,
-                      int numSeats, boolean isSUV) {
+                      int numSeats, boolean isSUV, boolean isMinivan) {
         super(make, model, year, 4);
         this.numSeats = numSeats;
         this.isSUV = isSUV;
+        this.isMinivan = isMinivan;
     }
 
     /**
@@ -56,6 +58,7 @@ public class Automobile extends Vehicle {
         super(make, model, year, 4);
         numSeats = 5;
         isSUV = false;
+        isMinivan = false;
     }
     /* Note: Don't try to illegally access inherited private fields.
      * For example, Automobile constructor cannot include
