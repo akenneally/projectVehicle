@@ -44,11 +44,10 @@ public class Automobile extends Vehicle {
      * If there isn't such a constructor, we get a compile-time error.
      */
     public Automobile(String make, String model, int year,
-                      int numSeats, boolean isSUV, boolean isMinivan) {
+                      int numSeats, boolean isSUV) {
         super(make, model, year, 4);
         this.numSeats = numSeats;
         this.isSUV = isSUV;
-        this.isMinivan = isMinivan;
     }
 
     /**

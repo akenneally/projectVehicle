@@ -38,14 +38,14 @@ package com.company;
     /*
     A constructor that takes four arguments
     */
-    public Vehicle(String mk, String mod, int yr, int numWh) {
-        make = mk;
-        model = mod;
-        if (yr < 1900) {
+    public Vehicle(String make, String model, int year, int numWheels) {
+        this.make = make;
+        this.model = model;
+        if (year < 1900) {
             throw new IllegalArgumentException();
         }
-        year = yr;
-        numWheels = numWh;
+        this.year = year;
+        this.numWheels = numWheels;
         mileage = 0;
         plateNumber = "unknown";
     }
@@ -105,9 +105,9 @@ package com.company;
      *
      * public class Driver {
      *
-     *      String name;
-     *      String ID;
-     *      Vehicle v;
+     *      private String name;
+     *      private String ID;
+     *      private Vehicle v;
      *
      * // ...
      * }
