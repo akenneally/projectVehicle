@@ -94,9 +94,10 @@ package com.company;
      * Vehicles.  This method overrides the toString()
      * method inherited from the Object class.
      */
+    @Override
     public String toString() {
         return make + " " + model;
-    }
+     }
 
     /* Note: We could do aggregation within this project.
      * Namely, could give the "owner" object a field that refers to the "owned" object.
@@ -113,4 +114,5 @@ package com.company;
      * }
      *
      */
+
 }

@@ -24,7 +24,6 @@ public class Automobile extends Vehicle {
 
     private int numSeats;
     private boolean isSUV;
-    private boolean isMinivan;
 
     /**
      * A constructor with five parameters
@@ -57,7 +56,6 @@ public class Automobile extends Vehicle {
         super(make, model, year, 4);
         numSeats = 5;
         isSUV = false;
-        isMinivan = false;
     }
     /* Note: Don't try to illegally access inherited private fields.
      * For example, Automobile constructor cannot include
@@ -76,12 +74,12 @@ public class Automobile extends Vehicle {
 
     /**
      * Method to override the toString method inherited from Vehicle.
-     *
+     * <p>
      * To *override* a method, the new method in the subclass must have the same:
      * name, number and types of parameters, and return type.
-     *
+     * <p>
      * This constraint is different from method *overloading*.
-     *
+     * <p>
      * Use @Override to have Java tell you if you accidentally don't use the same
      * name, number and types of parameters, and return type as the inherited method.
      */
@@ -91,19 +89,16 @@ public class Automobile extends Vehicle {
     }
     // What do you notice about method calls and instance variables in this
     // toString method?
-
     /*
      * Fields defined in Automobile can be accessed directly by methods defined in Automobile. 
      * Fields inherited from Vehicle cannot be accessed directly by methods defined in Automobile.
      */
-
     /* Note: Don't try to illegally access inherited private fields.
      * For example, the toString method cannot include
      * make + " " + model
      *
      */
-
-    public boolean moreSeats(Automobile other){
+    public boolean moreSeats(Automobile other) {
         return numSeats > other.numSeats;
     }
 }

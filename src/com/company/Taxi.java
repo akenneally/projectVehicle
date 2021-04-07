@@ -33,6 +33,7 @@ public class Taxi extends Automobile {
 
     /*
     Instance methods are inherited from Automobile.
+    Instance methods are inherited from Vehicle.
     Also, we define instance methods that are especially for Taxi objects here.
     */
 

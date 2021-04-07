@@ -17,15 +17,19 @@ public class VehicleDemo {
     public static void main(String[] args) {
 
         Vehicle v1 = new Vehicle("Panasonic", "B123", 1982, 2);
-        System.out.print(v1.toString());
+        System.out.print(v1);
         System.out.println();
 
         // Call the Automobile constructor with three parameters.
         Automobile car1 = new Automobile("Toyota", "Prius", 2017);
+        // Call the Automobile constructor with five parameters.
         Automobile car2 = new Automobile("Suburu", "Ascent", 2020, 7, true);
+
+
 
         // Call the toString method from the Automobile class implicitly.
         System.out.println("Car 1: " + car1.toString());
+        System.out.println("Car 2: " + car2.toString());
         System.out.println();
 
         // Call the Taxi constructor from the Taxi class.
@@ -40,10 +44,7 @@ public class VehicleDemo {
         taxi1.addFare(23.0);
         System.out.println("Taxi 1 fareTotal: " + taxi1.getFareTotal());
         System.out.println("Taxi 1 number of fares: " + taxi1.getNumFares());
-        System.out.print("Taxi 1 average fare: " + "$");
-        // Continue printing on same line;
-        // Format amount with two decimal digits:
-        System.out.printf("%.2f", taxi1.getAverageFare());
+        System.out.printf("Taxi 1 average fare: " + "$%.2f", taxi1.getAverageFare());
         // Go to next line:
         System.out.println();
         // Skip a line:
@@ -60,6 +61,7 @@ public class VehicleDemo {
         System.out.println();
         // Skip a line:
         System.out.println();
+        /*
 
         // Next fare of the day has a typo.
         // taxi1.addFare(-24.00);
@@ -79,7 +81,7 @@ public class VehicleDemo {
         System.out.println("Taxi 1: " + taxi1.toString());
         System.out.println();
 
-        System.out.println(car1.moreSeats(car2));
+        System.out.println(car1.moreSeats(car2));*/
     }
 }
 
