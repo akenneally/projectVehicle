@@ -32,8 +32,10 @@ public class VehicleDemo {
         System.out.println("Car 2: " + car2.toString());
         System.out.println();
 
+        System.out.printf("Car1 has more seats than car2: %b\n", car1.moreSeats(car2));
+
         // Call the Taxi constructor from the Taxi class.
-        Taxi taxi1 = new Taxi("Toyota", "Highlander Hybrid", 2016,
+        var taxi1 = new Taxi("Toyota", "Highlander Hybrid", 2016,
                 8, true, "A12345");
 
         System.out.println("Taxi 1 fareTotal: " + taxi1.getFareTotal());
@@ -61,7 +63,6 @@ public class VehicleDemo {
         System.out.println();
         // Skip a line:
         System.out.println();
-        /*
 
         // Next fare of the day has a typo.
         // taxi1.addFare(-24.00);
@@ -73,7 +74,7 @@ public class VehicleDemo {
         System.out.println("Taxi 1 new average fare: " + taxi1.getAverageFare());
         System.out.println();
 
-        // Taxi objects can call the methods inherited from the Automobile class.
+        // Taxi objects can call the methods inherited from the Vehicle class.
         taxi1.setMileage(12302);
         System.out.println("Mileage for taxi 1 is " + taxi1.getMileage());
         System.out.println();
@@ -81,7 +82,7 @@ public class VehicleDemo {
         System.out.println("Taxi 1: " + taxi1.toString());
         System.out.println();
 
-        System.out.println(car1.moreSeats(car2));*/
+        System.out.println(car1.moreSeats(car2));
     }
 }
 

@@ -14,7 +14,7 @@ package com.company;
  */
 public class FleetDemo {
 
-    public static final int CURRENT_YEAR = 2020;
+    public static final int CURRENT_YEAR = 2021;
 
     public static void main(String[] args) {
 
@@ -36,7 +36,7 @@ public class FleetDemo {
          * Here all elements of the array are of declared type Vehicle.
          * Each element has a different "declared type" vs. "actual type."
          * Declared type is specified when declaring a variable.
-         * Actualtype is specified when creating an object.
+         * Actual type is specified when creating an object.
          */
         fleet[0] = new Automobile("Honda", "Civic", 2016);
         fleet[1] = new Motorcycle("Harley", "Roadster", 2017);
@@ -84,9 +84,7 @@ public class FleetDemo {
         averageAge(fleet);
         System.out.println();
 
-        /*
-         * Why doesn't this work?
-         */
+        // TODO: (1) Answer why doesn't this work:
         // System.out.println(fleet[2].getNumAxles());
 
         /*
@@ -94,15 +92,13 @@ public class FleetDemo {
          * THE ACTUAL TYPE REMAINS TractorTrailer.
          */
         Truck truck1 = (Truck) fleet[2];
-        /*
-         *
-         * Which version of getNumAxles() will be invoked?
-         */
+
+        // TODO: (2) Answer which version of getNumAxles() will be invoked? Why?
         System.out.println("Number of axles on " + truck1.toString() + ":");
         System.out.println(truck1.getNumAxles());
         System.out.println();
 
-        // Will this work?
+        // TODO: (3) Determine whether this code will work. Explain the code performance.
         TractorTrailer big = (TractorTrailer) fleet[2];
         System.out.println(big.getNumAxles());
 
@@ -111,12 +107,14 @@ public class FleetDemo {
          * Thus, we can use an Object variable to store a reference to any object.
          */
         Object obj1 = new Taxi("Ford", "Tempo", 2000, 4, false, "T47783");
-        // Which toString method will be called?
+        // TODO: (4) Determine what is the declared type of obj1?  What is its actual type?
+        //  Which toString method will be called? Why?
         System.out.println(obj1.toString());
 
-        // Which methods are executed when the following code is executed?
         Truck t1 = new Truck("Mack", "Pinnacle Day Cab", 2016, 10);
         Truck t2 = new TractorTrailer("Mack", "Pinnacle Day Cab", 2016, 10);
+        // TODO: (5) Determine the declared and actual types of t1 and t2.
+        //  The methods are executed from which classes when the following code is executed? Explain the reasons.
         System.out.println(t1.getNumAxles());
         System.out.println(t2.getNumAxles());
     }

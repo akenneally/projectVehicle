@@ -22,7 +22,6 @@ public class TractorTrailer extends Truck {
         // Invoke the Truck constructor to initialize
         // the fields inherited from Truck and Vehicle.
         super(make, model, year, numWheels);
-
         // default value, which can be changed using setIsSleeper
         isSleeper = false;
     }
